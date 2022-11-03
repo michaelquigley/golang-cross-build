@@ -107,6 +107,8 @@ jobs:
           path: ./automated-release-build
 
       - run: |
+          mv ./automated-release-build/release-builds/* ./automated-release-build/
+          rm -rf ./automated-release-build/release-builds
           shasum ./automated-release-build/* > ./automated-release-build/checksums.txt
 
       - uses: goreleaser/goreleaser-action@v3
