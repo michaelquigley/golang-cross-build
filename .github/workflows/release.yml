@@ -30,6 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: find .
+
       - uses: actions/upload-artifact@v3
         with:
           name: funkify-linux
@@ -58,6 +60,8 @@ jobs:
           args: release --skip-publish --config .goreleaser-windows.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: find .
 
       - uses: actions/upload-artifact@v3
         with:
