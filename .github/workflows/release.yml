@@ -32,8 +32,8 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: zrok-linux
-          path: dist/zrok*
+          name: funkify-linux
+          path: dist/funkify*
 
   build-windows:
     runs-on: ubuntu-latest
@@ -61,8 +61,8 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: zrok-windows
-          path: dist/zrok*
+          name: funkify-windows
+          path: dist/funkify*
 
   publish-release:
     needs: [build-linux, build-windows]
@@ -71,25 +71,25 @@ jobs:
       - uses: actions/checkout@v3
 
       - run: |
-          mkdir -p ./zrok-build/linux
-          mkdir -p ./zrok-build/windows
+          mkdir -p ./funkify-build/linux
+          mkdir -p ./funkify-build/windows
 
       - uses: actions/download-artifact@v3
         with:
-          name: zrok-linux
-          path: ./zrok-build/linux
+          name: funkify-linux
+          path: ./funkify-build/linux
 
       - uses: actions/download-artifact@v3
         with:
-          name: zrok-windows
-          path: ./zrok-build/windows
+          name: funkify-windows
+          path: ./funkify-build/windows
 
       - run: |
-          cd ./zrok-build
-          cat ./linux/zrok*checksums.txt >> checksums.txt
-          cat ./windows/zrok*checksums.txt >> checksums.txt
-          rm ./linux/zrok*checksums.txt
-          rm ./windows/zrok*checksums.txt
+          cd ./funkify-build
+          cat ./linux/funkify*checksums.txt >> checksums.txt
+          cat ./windows/funkify*checksums.txt >> checksums.txt
+          rm ./linux/funkify*checksums.txt
+          rm ./windows/funkify*checksums.txt
 
       - uses: goreleaser/goreleaser-action@v3
         with:
