@@ -84,6 +84,8 @@ jobs:
           name: funkify-windows-x86_64.exe
           path: ./funkify-build/windows
 
+      - run: find . -type f
+
       - run: |
           xz ./funkify-build/linux/* ./funkify-build/windows/*
           sha512sum ./funkify-build/linux/* ./funkify-build/windows/* > ./funkify-build/checksums.txt
