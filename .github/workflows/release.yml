@@ -62,7 +62,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: funkify-darwin-x86_64
-          path: ./dist/golang-cross-build_darwin_amd64/golang-cross-build          
+          path: ./dist/golang-cross-build_darwin_amd64_v1/golang-cross-build          
 
   build-windows:
     runs-on: ubuntu-latest
