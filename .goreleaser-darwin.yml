@@ -1,0 +1,8 @@
+builds:
+- main: ./cmd/funkify
+  env:
+    - CGO_ENABLED=1
+  goos:
+    - darwin
+  goarch:
+    - amd64
