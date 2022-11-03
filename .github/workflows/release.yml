@@ -30,12 +30,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: find .
-
       - uses: actions/upload-artifact@v3
         with:
           name: funkify-linux
-          path: dist/funkify*
+          path: ./dist/golang-cross-build_linux_amd64_v1/golang-cross-build
 
   build-windows:
     runs-on: ubuntu-latest
@@ -61,12 +59,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: find .
-
       - uses: actions/upload-artifact@v3
         with:
-          name: funkify-windows
-          path: dist/funkify*
+          name: funkify-windows.exe
+          path: ./dist/golang-cross-build_windows_amd64_v1/golang-cross-build.exe
 
   publish-release:
     needs: [build-linux, build-windows]
@@ -85,7 +81,7 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: funkify-windows
+          name: funkify-windows.exe
           path: ./funkify-build/windows
 
       - run: |
