@@ -32,7 +32,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: funkify-linux
+          name: funkify-linux-x86_64
           path: ./dist/golang-cross-build_linux_amd64_v1/golang-cross-build
 
   build-windows:
@@ -61,7 +61,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: funkify-windows.exe
+          name: funkify-windows-x86_64.exe
           path: ./dist/golang-cross-build_windows_amd64_v1/golang-cross-build.exe
 
   publish-release:
@@ -85,6 +85,7 @@ jobs:
           path: ./funkify-build/windows
 
       - run: |
+          xz ./funkify-build/linux/* ./funkify-build/windows/*
           sha512sum ./funkify-build/linux/* ./funkify-build/windows/* > ./funkify-build/checksums.txt
 
       - uses: goreleaser/goreleaser-action@v3
