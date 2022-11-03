@@ -84,13 +84,6 @@ jobs:
           name: funkify-windows.exe
           path: ./funkify-build/windows
 
-      - run: |
-          cd ./funkify-build
-          cat ./linux/funkify*checksums.txt >> checksums.txt
-          cat ./windows/funkify*checksums.txt >> checksums.txt
-          rm ./linux/funkify*checksums.txt
-          rm ./windows/funkify*checksums.txt
-
       - uses: goreleaser/goreleaser-action@v3
         with:
           args: release --config .goreleaser-release.yml
