@@ -4,5 +4,5 @@ release:
   draft: true
   mode: append
   extra_files:
-    - glob: ./funkify-build/**/*
+    - glob: ./funkify-build/*
     - glob: ./funkify-build/checksums.txt
