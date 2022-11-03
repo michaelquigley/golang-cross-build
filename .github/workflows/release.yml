@@ -76,13 +76,16 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: funkify-linux
+          name: funkify-linux-x86_64
           path: ./funkify-build/linux
 
       - uses: actions/download-artifact@v3
         with:
-          name: funkify-windows.exe
+          name: funkify-windows-x86_64.exe
           path: ./funkify-build/windows
+
+      - run: |
+          sha512sum ./funkify-build/linux/* ./funkify-build/windows/* > ./funkify-build/checksums.txt
 
       - uses: goreleaser/goreleaser-action@v3
         with:
