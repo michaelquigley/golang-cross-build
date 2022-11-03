@@ -78,11 +78,20 @@ jobs:
         with:
           path: ./funkify-build
 
-      - run: find . -type f
-
       - run: |
+          mv ./funkify-build/funkify-linux-x86_64/golang-cross-build ./funkify-build/linux
+          rm -rf ./funkify-build/funkify-linux-x86_64
+          mv ./funkify-build/linux ./funkify-build/funkify-linux-x64_64
+
+          mv ./funkify-build/funkify-windows-x86_64.exe/golang-cross-build.exe ./funkify-build/windows.exe
+          rm -rf ./funkify-build/funkify-windows-x86_64.exe
+          mv ./funkify-build/windows.exe ./funkify-build/funkify-windows-x86_64.exe
+
           xz ./funkify-build/*
           shasum ./funkify-build/* > ./funkify-build/checksums.txt
+
+      - run: find . -type f
+
 
       - uses: goreleaser/goreleaser-action@v3
         with:
