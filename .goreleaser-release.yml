@@ -4,4 +4,4 @@ release:
   draft: true
   mode: append
   extra_files:
-    - glob: ./funkify-build/*
+    - glob: ./automated-release-build/*
