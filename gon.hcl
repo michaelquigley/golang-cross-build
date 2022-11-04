@@ -2,8 +2,8 @@ source = ["./dist/golang-cross-build_darwin_amd64_v1/funkify", "./dist/golang-cr
 bundle_id = "io.zrok.zrok"
 
 apple_id {
-	username = "michael.quigley@netfoundry.io"
-	password = ""
+	username = "@env:AC_USERNAME"
+	password = "@env:AC_PASSWORD"
 }
 
 sign {
