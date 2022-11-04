@@ -38,6 +38,8 @@ jobs:
   build-darwin:
     runs-on: macos-latest
     steps:
+      - run: echo ${{ secrets.APPLE_DEVELOPER_CERTIFICATE_P12_BASE64 }}
+
       - run: |
           brew tap mitchellh/gon
           brew install mitchellh/gon/gon
