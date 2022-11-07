@@ -9,4 +9,4 @@ builds:
     - amd64
     - arm64
   hooks:
-    post: gon gon-amd64.hcl
+    post: gon gon.hcl
