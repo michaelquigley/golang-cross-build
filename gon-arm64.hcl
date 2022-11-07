@@ -1,4 +1,4 @@
-source = ["./dist/golang-cross-build_darwin_arm64/funkify"]
+source = ["dist/funkify-arm64_darwin_arm64/funkify"]
 bundle_id = "io.zrok.zrok"
 
 apple_id {
@@ -11,7 +11,7 @@ sign {
 }
 
 notarize {
-    path = "./dist/golang-cross-build_darwin_arm64/funkify"
+    path = "dist/funkify-arm64_darwin_arm64/funkify"
     bundle_id = "io.zrok.zrok"
     staple = true
 }
