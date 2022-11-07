@@ -9,4 +9,4 @@ builds:
     - amd64
     - arm64
   hooks:
-    post: ./sign.sh
+    post: gon gon-amd64.hcl
