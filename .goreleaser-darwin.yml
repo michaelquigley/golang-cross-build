@@ -1,5 +1,6 @@
 builds:
-- main: ./cmd/funkify
+- id: funkify-amd64
+  main: ./cmd/funkify
   binary: funkify
   env:
     - CGO_ENABLED=1
@@ -7,6 +8,17 @@ builds:
     - darwin
   goarch:
     - amd64
+  hooks:
+    post: gon gon-amd64.hcl
+
+- id: funkify-arm64
+  main: ./cmd/funkify
+  binary: funkify
+  env:
+    - CGO_ENABLED=1
+  goos:
+    - darwin
+  goarch:
     - arm64
   hooks:
-    post: gon gon.hcl
+    post: gon gon-arm64.hcl    
