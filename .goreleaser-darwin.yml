@@ -7,15 +7,6 @@ builds:
     - darwin
   goarch:
     - amd64
-  hooks:
-    post: gon -log-level trace gon-amd64.hcl
-- main: ./cmd/funkify
-  binary: funkify
-  env:
-    - CGO_ENABLED=1
-  goos:
-    - darwin
-  goarch:
     - arm64
   hooks:
-    post: gon -log-level trace gon-arm64.hcl
+    post: ./sign.sh
