@@ -1,5 +1,5 @@
 source = ["dist/funkify-amd64_darwin_amd64_v1/funkify"]
-bundle_id = "io.zrok.zrok"
+bundle_id = "com.quigley.funkify"
 
 apple_id {
 	username = "@env:AC_USERNAME"
@@ -7,5 +7,5 @@ apple_id {
 }
 
 sign {
-	application_identity = "Apple Distribution: NetFoundry Inc"
+	application_identity = "@env:AC_APP_IDENTITY"
 }

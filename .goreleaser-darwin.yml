@@ -9,7 +9,7 @@ builds:
   goarch:
     - amd64
   hooks:
-    post: gon gon-amd64.hcl
+    post: gon build/gon-amd64.hcl
 
 - id: funkify-arm64
   main: ./cmd/funkify
@@ -21,4 +21,4 @@ builds:
   goarch:
     - arm64
   hooks:
-    post: gon gon-arm64.hcl
+    post: gon build/gon-arm64.hcl
