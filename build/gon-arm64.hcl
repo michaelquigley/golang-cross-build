@@ -7,5 +7,5 @@ apple_id {
 }
 
 sign {
-	application_identity = "@env:AC_APP_IDENTITY"
+	application_identity = "Apple Distribution: NetFoundry Inc"
 }
